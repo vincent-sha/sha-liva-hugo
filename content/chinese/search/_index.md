@@ -1,5 +1,5 @@
 ---
-title: "Search Result"
+title: "搜索结果"
 date: 2019-10-29T13:49:23+06:00
 draft: false
 
