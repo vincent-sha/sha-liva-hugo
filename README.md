@@ -51,6 +51,21 @@
 - 📄 分类详情页面
 - 📞 联系（Contact）页面
 
+## 📂 项目结构分析
+
+本项目遵循 Hugo 标准的最佳实践，结构清晰：
+
+- **核心配置 (`config/`)**: 采用模块化配置。
+    - `hugo.toml`: 核心站点配置。
+    - `languages.toml`: 多语言支持。
+    - `menus.en.toml`: 导航菜单定义。
+- **内容管理 (`content/`)**: 博客文章和静态页面存储在 `content/english/` 下。
+- **主题布局 (`themes/liva-hugo/`)**: 包含所有 HTML 模板、基础样式和脚本。
+- **资源文件 (`assets/`)**: 存放需要 Hugo 编译处理的 SCSS、JS 和图片。
+- **数据文件 (`data/`)**: 存放结构化数据（如画廊配置）。
+- **自动化脚本 (`scripts/`)**: 包含项目初始化和维护脚本。
+- **部署配置**: 预配置了 Netlify (`netlify.toml`) 和 Vercel (`vercel.json`)。
+
 
 
 ## 🔧 本地开发
@@ -107,26 +122,3 @@ Copyright &copy; Designed by [Themefisher](https://themefisher.com) & Developed 
 
 **图片许可：** 图片仅用于演示目的。它们有各自的许可，我们没有获得分享这些图片的许可。
 
-<!-- resources -->
-## 🙏 特别致谢
-
-- [Bootstrap](https://getbootstrap.com)
-- [Jquery](https://jquery.com)
-- [Themify Icons](https://themify.me/themify-icons)
-- [Slick Slider](https://kenwheeler.github.io/slick)
-- [Venobox](https://veno.es/venobox)
-- [Fuse Js](https://fusejs.io/)
-- [Google Fonts](https://fonts.google.com/)
-- [所有贡献者](https://github.com/gethugothemes/liva-hugo/graphs/contributors)
-
-## 👨‍💻 雇佣我们
-
-除了开发独特、极速的 Hugo 主题外，我们还提供定制服务。我们专注于创建基于 Hugo 的高性价比、高质量静态网站。
-
-如果你需要定制主题或从头开始开发完整网站，可以聘请我们。**查看我们的 [服务](https://gethugothemes.com/services/?utm_source=liva_github&utm_medium=referral&utm_campaign=github_theme_readme)**
-
-## 💎 我们出品的优质主题
-
-| [![Mega-Bundle-HUGO](https://assets.teamosis.com/thumbs/bundle.png?)](https://gethugothemes.com/bundle/?utm_source=liva_github&utm_medium=referral&utm_campaign=github_theme_readme) | [![Parsa](https://assets.teamosis.com/thumbs/parsa.png)](https://gethugothemes.com/products/parsa/) | [![Logbook](https://assets.teamosis.com/thumbs/logbook.png)](https://gethugothemes.com/products/logbook/) |
-|:---:|:---:|:---:|
-| **获取 68+ 款优质 Hugo 主题包** | **Parsa**  | **Logbook**  |

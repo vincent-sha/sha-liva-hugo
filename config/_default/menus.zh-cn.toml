@@ -1,0 +1,33 @@
+
+############################## 导航栏 ###############################
+# 主菜单
+[[main]]
+name = "关于"
+URL = "about/"
+weight = 1
+
+[[main]]
+name = "博客"
+URL = "blog/"
+weight = 2
+
+[[main]]
+name = "联系"
+URL = "contact/"
+weight = 3
+
+# 页脚菜单
+[[footer]]
+name = "关于"
+URL = "about/"
+weight = 1
+
+[[footer]]
+name = "博客"
+URL = "blog/"
+weight = 2
+
+[[footer]]
+name = "联系"
+URL = "contact/"
+weight = 3
