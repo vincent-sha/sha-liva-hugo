@@ -1,8 +1,9 @@
 ######################## default configuration ####################
 baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "Liva | Personal blog template"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+title = "中国旅游指南"
 theme = "liva-hugo"
-summaryLength = "10"
+summaryLength = 70
 pagination.pagerSize = 6
 disqusShortname = ""
