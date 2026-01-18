@@ -108,6 +108,16 @@ $ npm run dev
 
 或查看 [完整文档](https://docs.gethugothemes.com/liva/?ref=github)。
 
+## 🚀 Cloudflare Pages 部署
+
+1. **选择框架**：在 Cloudflare Pages 的「创建项目」流程中把 GitHub（或其他 Git 源）指向本仓库，Pages 会在「框架预设」里让你选择静态站点生成器，选 Hugo 并把 Hugo 版本锁定为 `0.147.2`。如果没有直接选项，也可以在环境变量里设置 `HUGO_VERSION=0.147.2`。
+2. **安装依赖**：Cloudflare 的构建环境默认不会安装 node_modules，因此在 web UI 的「环境变量」或「构建命令」前执行 `npm install` 来安装依赖；你也可以在 `package.json` 的 `build` 脚本前加上 `npm install`，但推荐在构建命令里写 `npm ci && npm run build` 以保证一致性。
+3. **构建命令与发布目录**：把构建命令设置为 `npm run build`，它会执行 `hugo --gc --minify ...`（参考 [package.json](package.json#L6-L16)）。发布目录设置为 `public`，因为 Hugo 生成的静态文件都输出到该文件夹。
+4. **环境变量**：除了 `HUGO_VERSION`，也可以添加 `HUGO_ENV=production` 或 `NODE_ENV=production`，尽量与本地开发环境保持一致。
+5. **可选预览**：激活 Cloudflare 的「部署预览」（Deploy Preview）功能后，提交 Pull Request 会触发 `npm run build`，你可以在 Web UI 查看输出与日志，如需更详细调试可在本地先执行 `npm run build` 以及 `npm run dev` 复现。
+6. **部署完成**：构建成功后，Cloudflare Pages 会把 `public` 目录打包并发布到你配置的域名（自动分配 `your-project.pages.dev`），你可以在 GitHub webhook / Cloudflare 日志中确认每次构建的耗时和状态。
+
+
 
 <!-- edit with sitepins -->
 
@@ -119,9 +129,7 @@ $ npm run dev
 
 点击下方的“使用 Sitepins 编辑”按钮，按照屏幕提示即可开始可视化编辑。
 
-  <a target="_blank" href="https://app.sitepins.com/new/clone?name=Liva%20Hugo&repository=https://github.com/gethugothemes/liva-hugo/">
-    <img src="https://sitepins.com/button.svg" alt="Edit with Sitepins">
-  </a>
+  [![Edit with Sitepins](https://sitepins.com/button.svg)](https://app.sitepins.com/new/clone?name=Liva%20Hugo&repository=https://github.com/gethugothemes/liva-hugo/)
 
 
 <!-- reporting issue -->
