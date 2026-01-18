@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "http://lovelyshark.net"
+baseURL = "https://lovelyshark.net/"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
 title = "中国旅游指南"
