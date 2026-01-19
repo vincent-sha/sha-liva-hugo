@@ -2,7 +2,8 @@
 baseURL = "https://lovelyshark.net/"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
-title = "中国旅游指南"
+title = "神州行者指南"
+description = "China Traveler's Guide"
 theme = "liva-hugo"
 summaryLength = 70
 pagination.pagerSize = 6
