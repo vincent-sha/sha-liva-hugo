@@ -1,26 +1,20 @@
-<div class="col-md-6 mb-4">
-    <article class="card">
-        {{ if and .Params.Image (ne .Params.Image "") }}
-        {{ $image := resources.Get .Params.Image }}
-        {{ if $image }}
-        {{ partial "image.html" (dict "Src" .Params.Image "Alt" "Image" "Class" "card-img-top" ) }}
-        {{ end }}
-        {{ end }}
-        <div class="card-body px-0">
-        {{ range .Params.Categories }}
-        <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}"
-            class="text-primary">{{ . | title | humanize }}</a>
-        {{ end }}
-        <a href="{{ .Permalink }}" class="h5 d-block my-3">{{ .Title | markdownify }}</a>
-        <div class="mb-3 post-meta">
-            <span>By {{ .Site.Params.Author }}</span>
-            {{ if not .Params.HideDate }}
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>{{ .PublishDate.Format "02 January 2006" }}</span>
-            {{ end }}
-        </div>
-        <p class="card-text">{{ .Summary | truncate 150}}</p>
-        <a href="{{ .Permalink }}" class="btn btn-outline-primary">read more</a>
+{{ $c := "c-blog-card" }}
+<div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+    <article class="{{$c}}">
+        <div class="{{$c}}__content">
+            <a href="{{ .Permalink }}" class="{{$c}}__image">
+                {{ if and .Params.Image (ne .Params.Image "") }}
+                {{ $image := resources.Get .Params.Image }}
+                {{ if $image }}
+                {{ partial "image.html" (dict "Src" .Params.Image "Alt" .Title "Class" "") }}
+                {{ end }}
+                {{ end }}
+            </a>
+            <div class="{{$c}}__info">
+                <div class="{{$c}}__info-wrap">
+                    <h3 class="{{$c}}__title">{{ .Title | markdownify }}</h3>
+                </div>
+            </div>
         </div>
     </article>
 </div>

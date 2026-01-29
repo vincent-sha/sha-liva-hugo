@@ -3,7 +3,7 @@
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mx-auto">
+      <div class="col-lg-8 mb-5 mb-lg-0">
         {{ range .Params.Categories }}
         <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}"
           class="text-primary">{{ . | title | humanize }}</a>
@@ -29,6 +29,9 @@
         <!-- comments -->
         {{ template "_internal/disqus.html" . }}
       </div>
+      <!-- sidebar -->
+      {{ partial "sidebar.html" . }}
+      <!-- /sidebar -->
     </div>
   </div>
 </section>

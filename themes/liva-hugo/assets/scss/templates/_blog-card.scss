@@ -1,0 +1,84 @@
+/* blog card */
+.c-blog-card {
+  position: relative;
+  overflow: hidden;
+  background: $white;
+  
+  &__content {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0);
+      transition: background 0.3s ease;
+      border-radius: 8px;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+  }
+
+  &__info-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $white;
+    margin: 0;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+  }
+
+  /* hover state */
+  &:hover {
+    .c-blog-card__image {
+      img {
+        transform: scale(1.08);
+        filter: brightness(0.7);
+      }
+
+      &::after {
+        background: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .c-blog-card__info {
+      transform: translateY(0);
+    }
+  }
+}
+/* /blog card */
